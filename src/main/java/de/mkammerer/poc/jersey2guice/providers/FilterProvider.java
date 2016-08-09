@@ -15,7 +15,7 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class FilterProvider implements ContainerRequestFilter {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(PreMatchFilter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FilterProvider.class);
 
     @Override
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {

@@ -1,6 +1,7 @@
 package de.mkammerer.poc.jersey2guice.jersey;
 
 import de.mkammerer.poc.jersey2guice.TimeService;
+import de.mkammerer.poc.jersey2guice.datatypes.ShortDate;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -20,8 +21,8 @@ public class MyResource {
 
     @GET
     @Produces("text/shortdate")
-    public String getIt() {
-        return timeService.now().toString();
+    public ShortDate getIt() {
+        return timeService.now();
 
     }
 }
