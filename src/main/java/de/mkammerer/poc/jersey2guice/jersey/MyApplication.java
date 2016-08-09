@@ -1,7 +1,9 @@
 package de.mkammerer.poc.jersey2guice.jersey;
 
 import com.google.inject.Guice;
+
 import de.mkammerer.poc.jersey2guice.guice.GuiceModule;
+
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.jvnet.hk2.guice.bridge.api.GuiceBridge;
@@ -13,7 +15,7 @@ public class MyApplication extends ResourceConfig {
 
     @Inject
     public MyApplication(ServiceLocator serviceLocator) {
-        packages(MyResource.class.getPackage().getName());
+        packages("de.mkammerer.poc.jersey2guice.jersey", "de.mkammerer.poc.jersey2guice.providers");
 
         GuiceBridge.getGuiceBridge().initializeGuiceBridge(serviceLocator);
 

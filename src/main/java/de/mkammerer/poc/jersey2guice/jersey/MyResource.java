@@ -19,8 +19,9 @@ public class MyResource {
     }
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces("text/shortdate")
     public String getIt() {
         return timeService.now().toString();
+
     }
 }
