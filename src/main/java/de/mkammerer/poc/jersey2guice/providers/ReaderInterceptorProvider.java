@@ -6,12 +6,14 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.ext.Provider;
 import javax.ws.rs.ext.ReaderInterceptor;
 import javax.ws.rs.ext.ReaderInterceptorContext;
 
 /**
  * Created by iranna on 9-8-16.
  */
+@Provider
 public class ReaderInterceptorProvider implements ReaderInterceptor {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ReaderInterceptorProvider.class);
