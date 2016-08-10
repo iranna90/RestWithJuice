@@ -1,17 +1,21 @@
 package de.mkammerer.poc.jersey2guice.jersey;
 
 import de.mkammerer.poc.jersey2guice.TimeService;
+import de.mkammerer.poc.jersey2guice.bean.MyBean;
 import de.mkammerer.poc.jersey2guice.datatypes.ShortDate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
 
 @Path("/")
@@ -38,5 +42,12 @@ public class MyResource {
     public ShortDate getDate(@PathParam("day") ShortDate shortDate) {
         LOGGER.info("Short date requested for {} ", shortDate);
         return shortDate;
+    }
+
+    @Path("{name}/{day}")
+    @GET
+    @Produces(TEXT_PLAIN)
+    public String getNameDate(@BeanParam MyBean myBean){
+        return myBean.toString();
     }
 }

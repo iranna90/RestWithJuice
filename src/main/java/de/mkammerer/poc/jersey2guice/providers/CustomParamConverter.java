@@ -5,12 +5,10 @@ import de.mkammerer.poc.jersey2guice.datatypes.ShortDate;
 import java.time.LocalDate;
 
 import javax.ws.rs.ext.ParamConverter;
-import javax.ws.rs.ext.Provider;
 
 /**
  * Created by iranna on 10-8-16.
  */
-@Provider
 public class CustomParamConverter implements ParamConverter<ShortDate> {
     @Override
     public ShortDate fromString(String s) {
