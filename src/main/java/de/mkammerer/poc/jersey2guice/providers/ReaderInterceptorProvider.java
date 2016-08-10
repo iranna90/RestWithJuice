@@ -13,7 +13,6 @@ import javax.ws.rs.ext.ReaderInterceptorContext;
 /**
  * Created by iranna on 9-8-16.
  */
-@Provider
 public class ReaderInterceptorProvider implements ReaderInterceptor {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ReaderInterceptorProvider.class);

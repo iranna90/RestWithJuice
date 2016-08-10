@@ -14,13 +14,12 @@ import javax.ws.rs.ext.WriterInterceptorContext;
 /**
  * Created by iranna on 9-8-16.
  */
-@Provider
 public class WriterInterceptorProvider implements WriterInterceptor {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WriterInterceptorProvider.class);
 
     @Override
     public void aroundWriteTo(WriterInterceptorContext writerInterceptorContext) throws IOException, WebApplicationException {
-        LOGGER.info("in reader interceptor {}", writerInterceptorContext.getOutputStream());
+        LOGGER.info("in writer interceptor {}", writerInterceptorContext.getOutputStream());
     }
 }
