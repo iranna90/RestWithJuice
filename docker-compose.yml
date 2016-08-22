@@ -1,0 +1,12 @@
+version: '2'
+services:
+  jettylocal:
+    build: .
+    ports:
+     - "4321:8080"
+    depends_on:
+     - postgreslocal
+  postgreslocal:
+    image: postgres
+    ports:
+     - "2345:5432"

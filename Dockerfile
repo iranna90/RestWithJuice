@@ -33,8 +33,8 @@ ENV JETTY_HOST 0.0.0.0
 ENV JETTY_LOGS /opt/jetty/logs
 
 #Download artifacts
-ADD jersey2-guice-1.0.0-SNAPSHOT.war /opt/jetty/webapps/jersey2-guice-1.0.0-SNAPSHOT.war
-
+COPY jersey2-guice-1.0.0-SNAPSHOT.war /opt/jetty/webapps/jersey2-guice-1.0.0-SNAPSHOT.war
+RUN chmod 777 /opt/jetty/webapps/jersey2-guice-1.0.0-SNAPSHOT.war
 WORKDIR /opt/jetty
 EXPOSE 8080
 CMD ["java", "-jar", "/opt/jetty/start.jar"]

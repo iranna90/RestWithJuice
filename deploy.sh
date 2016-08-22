@@ -10,9 +10,6 @@ echo "install the application"
 mvn clean
 mvn install
 
-echo "copy the war file to dockerfile location"
-rm -rf jersey2-guice-1.0.0-SNAPSHOT.war
-cp /Office/REPOSITORY/OTHERS/jersey2-guice/target/jersey2-guice-1.0.0-SNAPSHOT.war .
 
 echo "Build new image"
 docker build -t jetty:1 -f Dockerfile .

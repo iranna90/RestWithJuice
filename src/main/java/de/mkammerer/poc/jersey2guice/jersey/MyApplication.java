@@ -2,6 +2,8 @@ package de.mkammerer.poc.jersey2guice.jersey;
 
 import com.google.inject.Guice;
 
+import com.google.inject.Injector;
+import de.mkammerer.poc.jersey2guice.entity.DataBaseInititalizer;
 import de.mkammerer.poc.jersey2guice.guice.GuiceModule;
 
 import org.glassfish.hk2.api.ServiceLocator;
@@ -20,6 +22,8 @@ public class MyApplication extends ResourceConfig {
         GuiceBridge.getGuiceBridge().initializeGuiceBridge(serviceLocator);
 
         GuiceIntoHK2Bridge guiceBridge = serviceLocator.getService(GuiceIntoHK2Bridge.class);
-        guiceBridge.bridgeGuiceInjector(Guice.createInjector(new GuiceModule()));
+        Injector injector = Guice.createInjector(new GuiceModule());
+        injector.getInstance(DataBaseInititalizer.class);
+        guiceBridge.bridgeGuiceInjector(injector);
     }
 }

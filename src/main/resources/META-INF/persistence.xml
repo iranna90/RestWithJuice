@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="1.0">
+    <!-- Data base connection details for unit testing to run H2 (Can stay constant connection details as it will be used for unit testing) -->
+    <persistence-unit name="test-db" transaction-type="RESOURCE_LOCAL">
+        <class>de.mkammerer.poc.jersey2guice.entity.MyEntity</class>
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://postgreslocal:2345/postgres"/>
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="password"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
+            <!--<property name="hibernate.dialect" value="jsonb.MyPostgreSQL94Dialect"/>-->
+            <property name="hibernate.connection.pool_size" value="10"/>
+            <property name="hibernate.id.new_generator_mappings" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
